@@ -9,7 +9,7 @@ def map_value(value, prev_min, prev_max, new_min, new_max):
 class Window(arcade.Window):
     def __init__(self):
         super().__init__(1000, 700, "Bubble Sort Visualisation")
-        arcade.set_background_color((255, 19, 3))
+        arcade.set_background_color((255, 255, 255))
         self.bars = [Bar(self.width / len(data), map_value(d, 0, 100, 50, self.height)) for d in data]
         self.j = 0
         self.i = 0
@@ -26,7 +26,7 @@ class Window(arcade.Window):
         self.j, self.i = bubble(self.bars, self.j, self.i)
 class Bar(arcade.Sprite):
     def __init__(self, width, height):
-        super().__init__("Pixel blue.png")
+        super().__init__("black.png")
         self.width = width
         self.height = height
         self.bottom = 0

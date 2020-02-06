@@ -3,7 +3,7 @@ import random
 # for i in range(100):
     # data.append(random.randint(0,100))
 # Generator Expression
-data = [random.randint(0,100) for _ in range(50)]
+data = [random.randint(0,100) for _ in range(100)]
 # data = [i for i in range(50)]
 # print(str(data))
 def bubble(data, start_first, start_second):

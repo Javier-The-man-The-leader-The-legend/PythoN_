@@ -11,7 +11,7 @@ def process_data(proccessors, data):
     for process, item in zip(processors, data):
         yield process(item)
 def main():
-    with open("data_person_1000000.csv", "r") as file:
+    with open("Datapython/data_person_1000000.csv", "r") as file:
         people_strings = file.read().splitlines()
         # print(len(people_strings))
         # print(people_strings[0])
@@ -23,5 +23,7 @@ def main():
             # first, last, age, worth, eye_colour = string.split(",")
             # people.append(Person(first, last, age, worth, eye_colour))
             people.append(Person(*process_data(processors, string.split(","))))
-        pprint(people[696969])
-main()
+    return people
+
+if __name__ == "__main__":
+    main()
