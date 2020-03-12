@@ -5,9 +5,11 @@ def binary_search(data, needle, key=None):
         middle_index =  (right_index - left_index) // 2 + left_index
         if key:
             datum = key(data[middle_index])
-        if numbers[middle_index] > needle:
+        else:
+            datum = data[middle_index]
+        if datum > needle:
             right_index = middle_index
-        elif numbers[middle_index] < needle:
+        elif datum < needle:
             left_index = middle_index
         else:
             return middle_index
@@ -16,3 +18,4 @@ def main(needle):
      with open("data_nums_1000000.txt", "r") as file:
         numbers = list(map(int, file.read().splitlines()))
         numbers.sort()
+assert binary_search([4, 8, 15, 16, 23, 43], 15)  == 2, "OMG THE WORLD IS ON FIRE"
