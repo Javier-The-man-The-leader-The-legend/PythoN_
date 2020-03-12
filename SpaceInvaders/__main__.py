@@ -1,6 +1,12 @@
 import arcade as arc
 
 
-class SpaceInvaders():
+class SpaceInvaders(arc.Window):
     def __init__(self):
-        super().__init__()
+        super().__init__(800, 600, "Space Invaders", fullscreen=True)
+    def on_key_press(self, symbol, modifiers):
+        if symbol == arc.key.ESCAPE:
+            arc.close_window()
+if __name__ == "__main__":
+    SpaceInvaders()
+    arc.run()
